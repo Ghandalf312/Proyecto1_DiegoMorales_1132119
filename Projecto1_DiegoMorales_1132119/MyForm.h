@@ -1,4 +1,7 @@
 #pragma once
+#include "Pila.h"
+#include "Cola.h"
+#include "Lista.h"
 
 namespace Projecto1DiegoMorales1132119 {
 
@@ -8,6 +11,7 @@ namespace Projecto1DiegoMorales1132119 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace std;
 
 	/// <summary>
 	/// Resumen de MyForm
@@ -253,6 +257,7 @@ namespace Projecto1DiegoMorales1132119 {
 			this->listBox1->Name = L"listBox1";
 			this->listBox1->Size = System::Drawing::Size(59, 134);
 			this->listBox1->TabIndex = 4;
+			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::ListBox1_SelectedIndexChanged);
 			// 
 			// listBox2
 			// 
@@ -329,6 +334,7 @@ namespace Projecto1DiegoMorales1132119 {
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
@@ -338,5 +344,82 @@ namespace Projecto1DiegoMorales1132119 {
 
 		}
 #pragma endregion
+	Pila* MiPila = new Pila();
+	Nodo* cabeza = nullptr;
+
+	Cola* MiCola = new Cola();
+	Nodo* frente = nullptr;
+	Nodo* fin = nullptr;
+   
+	public: void MostrarPila()
+	{
+		int VectorPila[10] = { 11,11,11,11,11,11,11,11,11,11 };
+		int i = 0;
+		Nodo* Aux = new Nodo();
+		Aux = MiPila->Head;
+		listBox1->Items->Clear();
+		while (Aux != nullptr)
+		{
+			VectorPila[i] = Aux->digito;
+			i++;
+			Aux = Aux->Siguiente;
+		}
+		i = 0;
+		while (VectorPila[i] !=11 && i <= 9)
+		{
+			listBox1->Items->Add(VectorPila[i]);
+			i++;
+		}
+	}
+	public: void MostrarCola() {
+		int VectorCola[10] = {11,11,11,11,11,11,11,11,11};
+		int j = 0;
+		Nodo* Aux = new Nodo();
+		Aux = MiCola->Frente;
+		listBox2->Items->Clear();
+		while (Aux != nullptr)
+		{
+			VectorCola[j] = Aux->digito;
+			j++;
+			Aux = Aux->Siguiente;
+		}
+		j = 0;
+		while (VectorCola[j] != 11 && j <= 9)
+		{
+			listBox2->Items->Add(VectorCola[j]);
+			j++;
+		}
+	}
+	
+
+private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	//Llenando la pila con los valores iniciales.
+	MiPila->Push(cabeza, 0);
+	MiPila->Push(cabeza, 1);
+	MiPila->Push(cabeza, 2);
+	MiPila->Push(cabeza, 3);
+	MiPila->Push(cabeza, 4);
+	MiPila->Push(cabeza, 5);
+	MiPila->Push(cabeza, 6);
+	MiPila->Push(cabeza, 7);
+	MiPila->Push(cabeza, 8);
+	MiPila->Push(cabeza, 9);
+	MostrarPila();
+
+	MiCola->InsertarCola(frente, fin, 0);
+	MiCola->InsertarCola(frente, fin, 1);
+	MiCola->InsertarCola(frente, fin, 2);
+	MiCola->InsertarCola(frente, fin, 3);
+	MiCola->InsertarCola(frente, fin, 4);
+	MiCola->InsertarCola(frente, fin, 5);
+	MiCola->InsertarCola(frente, fin, 6);
+	MiCola->InsertarCola(frente, fin, 7);
+	MiCola->InsertarCola(frente, fin, 8);
+	MiCola->InsertarCola(frente, fin, 9);
+	MostrarCola();
+}
+
+private: System::Void ListBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

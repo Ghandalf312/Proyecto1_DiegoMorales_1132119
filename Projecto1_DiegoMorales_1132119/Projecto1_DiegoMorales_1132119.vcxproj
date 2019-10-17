@@ -133,12 +133,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cola.cpp" />
+    <ClCompile Include="Lista.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Nodo.cpp" />
+    <ClCompile Include="Pila.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cola.h" />
+    <ClInclude Include="Lista.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Nodo.h" />
+    <ClInclude Include="Pila.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
