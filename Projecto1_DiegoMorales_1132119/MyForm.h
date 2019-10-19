@@ -359,13 +359,15 @@ namespace Projecto1DiegoMorales1132119 {
 
 		}
 #pragma endregion
+	//Inicialización de la pila, cola y lista para mostrarlos en el display
 	Pila* MiPila = new Pila();
 	Cola* MiCola = new Cola();
 	Lista* MiLista = new Lista();
+	//Variables que funcionarán como puertas para mostrar los precios
 	bool IngresarValor = false;
 	bool DioVuelta1, DioVuelta2, DioVuelta3, DioVuelta4 = false;
 	bool salirse = false;
-
+	//Método de ordenamiento para ordenar la pila y la cola
 	void Burbuja(int A[], int n) {
 		int aux, i, j;
 		for (i = 0; i < n - 1; i++)
@@ -420,7 +422,7 @@ namespace Projecto1DiegoMorales1132119 {
 			j++;
 		}
 	}
-	public: void IngresarNumero(int w, int x, int y, int z) {
+	public: void IngresarNumero(int w, int x, int y, int z) {//Procedimiento que permitirá ingresar el precio, para redondearlo.
 		Nodo* aux = new Nodo;
 		bool Encontro1 = false;
 		bool Encontro2 = false;
@@ -668,10 +670,8 @@ private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) 
 private: System::Void ListBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	//Cuando de click al botón de agregar precio, ejecutará el siguiente código
 	String^ Precio = (mtbPrecio->Text)->Replace(" ","");
-
-	
-
 	if (Precio->Length == 5) {
 		//Obtener los 4 valores para revisar
 		int w, x, y, z;
@@ -765,7 +765,7 @@ private: System::Void Button3_Click(System::Object^ sender, System::EventArgs^ e
 
 
 private: System::Void Button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	//Ordenará la pila y cola para mostrala en el display.
 	Nodo* aux; 
 	int ValoresPila[10] = { 11,11,11,11,11,11,11,11,11,11 };
 	int ValoresCola[10] = { 11,11,11,11,11,11,11,11,11,11 };
