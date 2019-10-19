@@ -1,4 +1,7 @@
-﻿  Pila.cpp
-C:\Users\Diego\source\repos\Projecto1_DiegoMorales_1132119\Projecto1_DiegoMorales_1132119\Pila.cpp(54): warning C4715:  'Pila::Quitar': no todas las rutas de acceso de control devuelven un valor
+﻿  MyForm.cpp
+C:\Users\Diego\source\repos\Projecto1_DiegoMorales_1132119\Projecto1_DiegoMorales_1132119\MyForm.h(393,23): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Diego\source\repos\Projecto1_DiegoMorales_1132119\Projecto1_DiegoMorales_1132119\MyForm.h(412,23): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Diego\source\repos\Projecto1_DiegoMorales_1132119\Projecto1_DiegoMorales_1132119\MyForm.h(777,27): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Diego\source\repos\Projecto1_DiegoMorales_1132119\Projecto1_DiegoMorales_1132119\MyForm.h(786,27): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
   Cola.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   Projecto1_DiegoMorales_1132119.vcxproj -> C:\Users\Diego\source\repos\Projecto1_DiegoMorales_1132119\Debug\Projecto1_DiegoMorales_1132119.exe

@@ -8,12 +8,9 @@ public:
 public:
 	Cola();
 	~Cola();
-	bool IsEmpty(Nodo* Cabeza);
-	void InsertarCola(int n);
-	int SuprimirCola(int n);
-
 	void Push(int n);
 	int Pop();
 	void LimpiarCola();
+	bool BuscarValorCola(int n);
 };
 

@@ -6,6 +6,6 @@ public:
 	~Nodo();
 	Nodo *Anterior;
 	Nodo* Siguiente;
-	int digito;
+	double digito;
 };
 

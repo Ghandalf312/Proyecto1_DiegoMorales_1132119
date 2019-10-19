@@ -20,3 +20,4 @@ Class Projecto1DiegoMorales1132119.MyForm: AutoLayout, AnsiClass, Class, Public,
   Methods:
     MostrarPila(): PrivateScope, Public, HideBySig
     MostrarCola(): PrivateScope, Public, HideBySig
+    IngresarNumero(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
