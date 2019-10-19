@@ -44,7 +44,7 @@ namespace Projecto1DiegoMorales1132119 {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::GroupBox^ groupBox2;
-	private: System::Windows::Forms::TextBox^ textBox1;
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::ListBox^ listBox1;
 	private: System::Windows::Forms::ListBox^ listBox2;
@@ -61,6 +61,8 @@ namespace Projecto1DiegoMorales1132119 {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::ListBox^ listBox3;
+	private: System::Windows::Forms::MaskedTextBox^ mtbPrecio;
+
 
 	private:
 		/// <summary>
@@ -83,12 +85,12 @@ namespace Projecto1DiegoMorales1132119 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->mtbPrecio = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->lblUnidad = (gcnew System::Windows::Forms::Label());
 			this->lblDecima = (gcnew System::Windows::Forms::Label());
 			this->lblCentesima = (gcnew System::Windows::Forms::Label());
 			this->lblDecena = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
@@ -154,6 +156,7 @@ namespace Projecto1DiegoMorales1132119 {
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Agregar precio";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::Button1_Click);
 			// 
 			// button2
 			// 
@@ -175,12 +178,12 @@ namespace Projecto1DiegoMorales1132119 {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->mtbPrecio);
 			this->groupBox2->Controls->Add(this->label2);
 			this->groupBox2->Controls->Add(this->lblUnidad);
 			this->groupBox2->Controls->Add(this->lblDecima);
 			this->groupBox2->Controls->Add(this->lblCentesima);
 			this->groupBox2->Controls->Add(this->lblDecena);
-			this->groupBox2->Controls->Add(this->textBox1);
 			this->groupBox2->Controls->Add(this->label1);
 			this->groupBox2->Location = System::Drawing::Point(229, 12);
 			this->groupBox2->Name = L"groupBox2";
@@ -189,10 +192,18 @@ namespace Projecto1DiegoMorales1132119 {
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Ingrese el precio";
 			// 
+			// mtbPrecio
+			// 
+			this->mtbPrecio->Location = System::Drawing::Point(55, 34);
+			this->mtbPrecio->Mask = L"00.00";
+			this->mtbPrecio->Name = L"mtbPrecio";
+			this->mtbPrecio->Size = System::Drawing::Size(158, 20);
+			this->mtbPrecio->TabIndex = 7;
+			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(105, 98);
+			this->label2->Location = System::Drawing::Point(101, 98);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(10, 13);
 			this->label2->TabIndex = 6;
@@ -233,13 +244,6 @@ namespace Projecto1DiegoMorales1132119 {
 			this->lblDecena->Size = System::Drawing::Size(45, 13);
 			this->lblDecena->TabIndex = 2;
 			this->lblDecena->Text = L"Decena";
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(55, 34);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(137, 20);
-			this->textBox1->TabIndex = 1;
 			// 
 			// label1
 			// 
@@ -348,8 +352,6 @@ namespace Projecto1DiegoMorales1132119 {
 	Nodo* cabeza = nullptr;
 
 	Cola* MiCola = new Cola();
-	Nodo* frente = nullptr;
-	Nodo* fin = nullptr;
    
 	public: void MostrarPila()
 	{
@@ -372,7 +374,7 @@ namespace Projecto1DiegoMorales1132119 {
 		}
 	}
 	public: void MostrarCola() {
-		int VectorCola[10] = {11,11,11,11,11,11,11,11,11};
+		int VectorCola[10] = {11,11,11,11,11,11,11,11,11,11};
 		int j = 0;
 		Nodo* Aux = new Nodo();
 		Aux = MiCola->Frente;
@@ -394,32 +396,56 @@ namespace Projecto1DiegoMorales1132119 {
 
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	//Llenando la pila con los valores iniciales.
-	MiPila->Push(cabeza, 0);
-	MiPila->Push(cabeza, 1);
-	MiPila->Push(cabeza, 2);
-	MiPila->Push(cabeza, 3);
-	MiPila->Push(cabeza, 4);
-	MiPila->Push(cabeza, 5);
-	MiPila->Push(cabeza, 6);
-	MiPila->Push(cabeza, 7);
-	MiPila->Push(cabeza, 8);
-	MiPila->Push(cabeza, 9);
+	MiPila->Agregar(0);
+	MiPila->Agregar(1);
+	MiPila->Agregar(2);
+	MiPila->Agregar(3);
+	MiPila->Agregar(4);
+	MiPila->Agregar(5);
+	MiPila->Agregar(6);
+	MiPila->Agregar(7);
+	MiPila->Agregar(8);
+	MiPila->Agregar(9);
 	MostrarPila();
-
-	MiCola->InsertarCola(frente, fin, 0);
-	MiCola->InsertarCola(frente, fin, 1);
-	MiCola->InsertarCola(frente, fin, 2);
-	MiCola->InsertarCola(frente, fin, 3);
-	MiCola->InsertarCola(frente, fin, 4);
-	MiCola->InsertarCola(frente, fin, 5);
-	MiCola->InsertarCola(frente, fin, 6);
-	MiCola->InsertarCola(frente, fin, 7);
-	MiCola->InsertarCola(frente, fin, 8);
-	MiCola->InsertarCola(frente, fin, 9);
+	//Llenando la cola con los valores iniciales
+	MiCola->Push(0);
+	MiCola->Push(1);
+	MiCola->Push(2);
+	MiCola->Push(3);
+	MiCola->Push(4);
+	MiCola->Push(5);
+	MiCola->Push(6);
+	MiCola->Push(7);
+	MiCola->Push(8);
+	MiCola->Push(9);
 	MostrarCola();
 }
 
 private: System::Void ListBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ Precio = mtbPrecio->Text;
+	//array<String^>^ PrecioArray= Precio->Split;
+	int pos = 0;
+	char a = Precio[pos];
+	lblDecena->Text = Precio[pos].ToString();
+	int ia = a - '0';
+	
+	int x = MiPila->Quitar();
+
+	MostrarPila();
+	
+	
+	
+	pos++;
+	lblUnidad->Text = Precio[pos].ToString();
+	pos++;
+	pos++;
+	lblDecima->Text = Precio[pos].ToString();
+	pos++;
+	lblCentesima->Text = Precio[pos].ToString();
+
+	listBox3->Items->Add(Precio);
 }
 };
 }

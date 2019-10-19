@@ -18,4 +18,8 @@ public:
 	~Pila();
 	void Push(Nodo *Pila, int n);
 	int Pop(Nodo* Pila, int n);
+
+	void Agregar(int n);
+	int Quitar();
+	void LimpiarPila();
 };

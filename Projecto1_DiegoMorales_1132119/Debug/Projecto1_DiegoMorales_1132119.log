@@ -1,3 +1,4 @@
-﻿  MyForm.cpp
+﻿  Pila.cpp
+C:\Users\Diego\source\repos\Projecto1_DiegoMorales_1132119\Projecto1_DiegoMorales_1132119\Pila.cpp(54): warning C4715:  'Pila::Quitar': no todas las rutas de acceso de control devuelven un valor
   Cola.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   Projecto1_DiegoMorales_1132119.vcxproj -> C:\Users\Diego\source\repos\Projecto1_DiegoMorales_1132119\Debug\Projecto1_DiegoMorales_1132119.exe

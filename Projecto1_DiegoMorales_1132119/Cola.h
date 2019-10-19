@@ -9,7 +9,11 @@ public:
 	Cola();
 	~Cola();
 	bool IsEmpty(Nodo* Cabeza);
-	void InsertarCola(Nodo* Frente, Nodo* Fin, int n);
-	void SuprimirCola(Nodo* Frente, Nodo* Fin, int n);
+	void InsertarCola(int n);
+	int SuprimirCola(int n);
+
+	void Push(int n);
+	int Pop();
+	void LimpiarCola();
 };
 
